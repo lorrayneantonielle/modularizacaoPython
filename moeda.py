@@ -52,3 +52,22 @@ def moeda(n = 0, moeda = 'R$'):
     :return: Retorna a formtação escolhida para a moeda brasileira (R$)
     """
     return f'{moeda}{n:>8.2f}'.replace('.',',')
+
+
+def resumo(preço=0, taxaa=10,taxar=5):
+    """
+    -> Função resumo - Define o resumo do código principal
+    :param preço: Preço é o valor definido pelo usuário
+    :param taxaa: taxa de aumento do preço em %
+    :param taxar: taxa de redução do preço em $
+    :return: Função sem retorno
+    """
+    print('='*30)
+    print('RESUMO DO VALOR'.center(30))
+    print('='*30)
+    print(f'Preço analisado: \t{moeda(preço)}')
+    print(f'Dobro do preço:\t{dobro(preço, True)}')
+    print(f'Metade do preço:\t{metade(preço, True)}')
+    print(f'Com {taxaa}% de aumento:\t{aumentar(preço, taxaa, True)}')
+    print(f'Com {taxar}% de redução:\t{diminuir(preço, taxar, True)}')
+    print('=' * 30)
